@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="js/person.js"></script>
-    <script src="js/calculator.js"></script>
+    <script src="js/bmiCalculator.js"></script>
 </head>
 
 <body>
@@ -13,6 +13,20 @@
         <div id="metric-inputs">
             <input type="text" id="weight-in-kgs" placeholder="Weight">
             <input type="text" id="height-in-cm" placeholder="Height">
+        </div>
+
+        <div id="imperial-inputs">
+            <input type="text" id="weight-in-lbs" placeholder="Weight">
+            <input type="text" id="height-in-in" placeholder="Height">
+        </div>
+
+        <div class="form-group row">
+            <div class="col-auto">
+              <select class="form-control" id="my_select">
+                <option value="metric">Metric System</option>
+                <option value="imperial">Imperial System</option>
+              </select>
+            </div>
         </div>
 
         <button type="submit" value="Calculate"> Calculate </button>
@@ -32,10 +46,11 @@
         global.calculateForm = document.querySelector('#calculate');
         global.displayValueElement = document.querySelector('#display_value');
         global.displayMessageElement = document.querySelector('#display_message');
+        global.methodSelector = document.querySelector('#my_select');
     
     
         // Once the page has loaded, we add listeners to the select tag and the form
-        // there's a lot ol events that we can listen for. 
+        // there's a lot of events that we can listen for. 
         // here, we listen for when a value has changed and when a form has been submitted
         document.addEventListener('DOMContentLoaded', () => {
             // Submit listener on the form
@@ -43,7 +58,7 @@
                 // 'preventDefault' prevents the default action the browser makes on the form
                 // we only want some java script to be executed, nothing else
                 event.preventDefault();
-                // the 'claculateBMI' function will create a ne instance of Person, calculate the 
+                // the 'claculateBMI' function will create an instance of Person, calculate the 
                 // BMI and return the object. Its a asynchronous function (making use of a Promise)
                 // mening we can wait for the result and execute more code once we get the result back. Hence the use of '.then()'
                 calculateBMI()
@@ -57,15 +72,20 @@
         });
     
         const calculateBMI = () => {
+            let method = global.methodSelector.options[global.methodSelector.selectedIndex].value
             return new Promise(resolve => {
                 // Here, for learning purposes, we will use 'document.getElementById()' to get hold of a element
-                let w = parseFloat(document.getElementById('weight-in-kgs').value);
-                let h = parseFloat(document.getElementById('height-in-cm').value);
+                let weightFormat = method === 'metric' ? 'weight-in-kgs' : 'weight-in-lbs'
+                let heightFormat = method === 'metric' ? 'height-in-cm' : 'height-in-in'
+                
+                let w = parseFloat(document.getElementById(weightFormat).value);
+                let h = parseFloat(document.getElementById(heightFormat).value);
+                
                 let person = new Person({
                     weight: w,
                     height: h,
                 });
-                person.calculate_bmi();
+                method === 'metric' ? person.calculateBmi() : person.calculateImperialBmi();
                 resolve(person);
             })
         };

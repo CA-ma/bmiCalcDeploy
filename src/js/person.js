@@ -5,6 +5,11 @@ function Person(attr) {
         calculator = new BMICalculator();
         calculator.metricBmi(this)
     }
+
+    Person.prototype.calculateImperialBmi  = function() {
+        calculator = new BMICalculator();
+        calculator.imperialBmi(this);
+      };
 };
 
 if (typeof module !== 'undefined' && module.exports) {
