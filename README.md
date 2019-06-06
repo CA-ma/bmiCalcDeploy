@@ -1,8 +1,5 @@
 # bmiCalcDeploy
 
-bmiCalcDeploy Repository
-------------------------
-
 Details
 1. A web-deployed Body Mass Index (BMI) calculator is contained herein.
 2. Website deployment accomplished with basic HTML and minor styling with CSS.
