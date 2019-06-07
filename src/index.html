@@ -10,32 +10,52 @@
 </head>
 
 <body>
-    <form id="calculate">
-        <div id="metric-inputs">
-            <input type="text" id="weight-in-kgs" placeholder="Weight">
-            <input type="text" id="height-in-cm" placeholder="Height">
-        </div>
-
-        <div id="imperial-inputs">
-            <input type="text" id="weight-in-lbs" placeholder="Weight">
-            <input type="text" id="height-in-in" placeholder="Height">
-        </div>
-
-        <div class="form-group row">
-            <div class="col-auto">
-              <select class="form-control" id="my_select">
-                <option value="metric">Metric System</option>
-                <option value="imperial">Imperial System</option>
-              </select>
+    <div id="calculate">
+        <h3>Body Mass Index (BMI) Calculator</h1>
+        <form id="calculator_form">
+            <!--Metric/Imperial units selector-->
+            <div class="form-group row">
+                <div class="col-auto">
+                <p>1. Choose units of operation</p>
+                <div align="center">
+                    <select class="form-control" id="my_select">
+                        <option value="metric">Metric</option>
+                        <option value="imperial">Imperial</option>
+                    </select>
+                </div>
+                </div>
             </div>
-        </div>
+            
+            <!--Metric inputs-->
+            <p>2a. If 'Metric', input here</p>
+            <div id="metric-inputs" align="center">
+                <input type="text" id="weight-in-kgs" placeholder="Weight [kg]">
+                <input type="text" id="height-in-cm" placeholder="Height [cm]">
+            </div>
 
-        <button type="submit" value="Calculate"> Calculate </button>
-    </form>
-    <div>
-        <span id="display_value"></span>
-        <span id="display_message"></span>
+            <!--Imperial inputs-->
+            <p>2b. If 'Imperial', input here</p>
+            <div id="imperial-inputs" align="center">
+                <input type="text" id="weight-in-lbs" placeholder="Weight [lb]">
+                <input type="text" id="height-in-in" placeholder="Height [in]">
+            </div>
+
+            <!--"Calulate BMI button-->
+            <p>3. Calculate BMI</p>
+            <div align="center">
+                <button type="submit" value="Calculate"> Calculate </button>
+            </div>
+            <p> </p>
+            <p> </p>
+
+            <!--Output message resulting from Calculate BMI button push-->
+            <div align="center">
+                <span id="display_value"></span>
+                <span id="display_message"></span>
+            </div>
+        </form>
     </div>
+    
 
 
     <script type="text/javascript">
