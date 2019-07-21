@@ -1,26 +1,26 @@
-function BMICalculator(){
+function BMICalculator() {
 
-  BMICalculator.prototype.metricBmi = function(obj) {
+  BMICalculator.prototype.metricBmi = function (obj) {
     let weight = obj.weight;
     let height = obj.height;
     if (weight > 0 && height > 0) {
       var finalBmi = weight / (height / 100 * height / 100);
-      obj.bmiValue =  parseFloat(finalBmi.toFixed(2));
+      obj.bmiValue = parseFloat(finalBmi.toFixed(2));
       setBMIMessage(obj);
     }
   };
 
-  BMICalculator.prototype.imperialBmi = function(obj) {
+  BMICalculator.prototype.imperialBmi = function (obj) {
     let weight = obj.weight;
     let height = obj.height;
     if (weight > 0 && height > 0) {
       let finalBmi = weight / (height * height) * 703;
-          obj.bmiValue = parseFloat(finalBmi.toFixed(2));
-          setBMIMessage(obj);
+      obj.bmiValue = parseFloat(finalBmi.toFixed(2));
+      setBMIMessage(obj);
     }
   };
 
-  function setBMIMessage (obj){
+  function setBMIMessage(obj) {
     if (obj.bmiValue < 18.5) {
       obj.bmiMessage = "Underweight"
     }
@@ -38,9 +38,8 @@ function BMICalculator(){
 };
 
 
-  
-  if (typeof module !== 'undefined' && module.exports) {
-      module.exports = BMICalculator;
-  }
 
-  
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = BMICalculator;
+}
+

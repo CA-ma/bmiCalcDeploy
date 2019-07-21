@@ -2,7 +2,7 @@
 Developed and documented by,
 * Aubain, Max - [Github](https://github.com/CA-ma)
 
-## Summary
+## Application summary
 This repository contains a code base for a Body Mass Index (BMI) calculator web app.  A BMI calculator<sup>1</sup> returns an 'index' value based on the height and weight of an individual.  The 'index' is proportional to the ratio of weight to height, so as weight increases and/or height decreases, the 'index' will increase.  [According to the Department of Health & Human Services](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi-m.htm), a U.S. Government agency, the 'index' value correlates to the following conditions:
 
 ```
@@ -17,25 +17,25 @@ Obesity = 30 or greater
 The methods that govern the BMI calculator app are developed with Javascript and styled in the view with HTML and vanilla CSS options.  The methods and features of the calculator are tested using a package called [End To End Training Wheels](https://www.npmjs.com/package/e2e_training_wheels), which is a lightweight JS testing framework that can implement both unit and feature tests.
 
 ### Technology summary
-**Front end**
+Front end
 * HTML
 * CSS
 * JS
 
-**Back end**
+Back end
 * N/A
 
-**Testing**
+Testing
 * End-to-end (e2e) Training Wheels: unit and feature
 
-## Deployment
+## Application deployment
 The [BMI web app](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Github Pages.
 
-## Building the project
+## Building the application
 ### Goals
 
-### Local Setup
-To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions will configure your local workspace with the necessary package manager and packages.  You can refer to the e2e Training Wheels installation [here](https://www.npmjs.com/package/e2e_training_wheels#installation).
+### Setup the app on your terminal
+To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can refer to the e2e Training Wheels installation [here](https://www.npmjs.com/package/e2e_training_wheels#installation).
 
 ```
 // Initialize Node Package Manager (NPM)
@@ -52,7 +52,7 @@ $ node ./node_modules/e2e_training_wheels/dist/install.js
 $ npm test
 ```
 
-### Testing
+### Testing strategy
 
 ## Acknowledgements
 Thank you to Craft Academy in Stockholm, Sweden for crafting this challenge.
