@@ -59,8 +59,5 @@ Running the tests using `$ npm test` in accordance with the files defined above 
 **Unit Test Results**<br>
 ![unit tests](/src/img/bmi_spec_test.png) 
 
-
-
-
 ## Acknowledgements
 Thank you to [Craft Academy](https://craftacademy.se/) in Stockholm, Sweden for crafting this challenge.
