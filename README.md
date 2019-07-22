@@ -33,6 +33,7 @@ The [BMI web app](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Gith
 
 ## Building the application
 ### Goals
+The BMI Calculator application is designed to have a intuitive interface in which the user can input their height and weight, in either metric or imperial units, and the app returns their BMI.
 
 ### Setup the app on your terminal
 To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can refer to the e2e Training Wheels installation [here](https://www.npmjs.com/package/e2e_training_wheels#installation).
@@ -52,7 +53,23 @@ $ node ./node_modules/e2e_training_wheels/dist/install.js
 $ npm test
 ```
 
-### Testing strategy
+### Development and testing strategy
+Development is accomplished using Test Driven Development (TDD) and Behavior Driven Development (BDD) principles.  As such, tests are written before coding to set targets for minimum functionality of the app from a user's perspective.
+
+Two classes are defined, the Person class and the BMICalculator class.  The tests for the Person class are contained in `/spec/person.spec.js` that test an instance of the class with specific input parameters, and the output of the BMI calculator with the given test instance parameters.  Accordingly, the Person class is defined in `/src/js/person.js`.  In the same vein, the BMI Calculator class test is coded in `/spec/bmiCalculator.spec.js` to define an instance of the Person and an instance of the Calculator to calculate the BMI and verify its output.  The BMI calculator functions are contained in `/src/js/bmiCalculator.js` defining the BMI calculation in metric and imperial unit.  Here the ranges of BMI classifcations, 'underweight', 'normal', etc., are defined.
+
+The application feature test are contained in `/features/index.feature.js` and test the view functionality when connected to the logic as defined in the tests above.  `before`, `beforeEach`, and `after` functions control the browswer behavior in feature tests, while the step definitions specify values that are given as form field inputs and the order in which form buttons are selected.  Separate `describe` blocks are defined in the feature test to verify the metric and imperial calculations.
+
+Running the tests using `$ npm test` in accordance with the files defined above will produce successful results for the feature tests,
+
+![feature tests](/src/img/bmi_feature_test.png) 
+
+and the unit tests.
+
+![unit tests](/src/img/bmi_spec_test.png) 
+
+
+
 
 ## Acknowledgements
-Thank you to Craft Academy in Stockholm, Sweden for crafting this challenge.
+Thank you to [Craft Academy](https://craftacademy.se/) in Stockholm, Sweden for crafting this challenge.
