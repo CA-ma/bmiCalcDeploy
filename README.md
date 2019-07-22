@@ -1,8 +1,12 @@
-# Challenge: Body Mass Index (BMI) Caclulator
+# Application: Body Mass Index (BMI) Caclulator
 Developed and documented by,
 * Aubain, Max - [Github](https://github.com/CA-ma)
 
-## Application summary
+## Summary
+**Front end**: HTML; CSS; and JS.<br>
+**Back end**: N/A.<br>
+**Testing**: End-to-end (e2e) Training Wheels - unit and feature test.
+
 This repository contains a code base for a Body Mass Index (BMI) calculator web app.  A BMI calculator<sup>1</sup> returns an 'index' value based on the height and weight of an individual.  The 'index' is proportional to the ratio of weight to height, so as weight increases and/or height decreases, the 'index' will increase.  [According to the Department of Health & Human Services](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi-m.htm), a U.S. Government agency, the 'index' value correlates to the following conditions:
 
 ```
@@ -16,27 +20,13 @@ Obesity = 30 or greater
 
 The methods that govern the BMI calculator app are developed with Javascript and styled in the view with HTML and vanilla CSS options.  The methods and features of the calculator are tested using a package called [End To End Training Wheels](https://www.npmjs.com/package/e2e_training_wheels), which is a lightweight JS testing framework that can implement both unit and feature tests.
 
-### Technology summary
-Front end
-* HTML
-* CSS
-* JS
-
-Back end
-* N/A
-
-Testing
-* End-to-end (e2e) Training Wheels: unit and feature
-
-## Application deployment
+## Deployment
 The [BMI web app](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Github Pages.
 
-## Building the application
-### Goals
+## Building, Development, and Testing
 The BMI Calculator application is designed to have a intuitive interface in which the user can input their height and weight, in either metric or imperial units, and the app returns their BMI.
 
-### Setup the app on your terminal
-To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can refer to the e2e Training Wheels installation [here](https://www.npmjs.com/package/e2e_training_wheels#installation).
+To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can also refer to the e2e Training Wheels [installation guidelines](https://www.npmjs.com/package/e2e_training_wheels#installation).
 
 ```
 // Initialize Node Package Manager (NPM)
@@ -53,19 +43,20 @@ $ node ./node_modules/e2e_training_wheels/dist/install.js
 $ npm test
 ```
 
-### Development and testing strategy
 Development is accomplished using Test Driven Development (TDD) and Behavior Driven Development (BDD) principles.  As such, tests are written before coding to set targets for minimum functionality of the app from a user's perspective.
 
-Two classes are defined, the Person class and the BMICalculator class.  The tests for the Person class are contained in `/spec/person.spec.js` that test an instance of the class with specific input parameters, and the output of the BMI calculator with the given test instance parameters.  Accordingly, the Person class is defined in `/src/js/person.js`.  In the same vein, the BMI Calculator class test is coded in `/spec/bmiCalculator.spec.js` to define an instance of the Person and an instance of the Calculator to calculate the BMI and verify its output.  The BMI calculator functions are contained in `/src/js/bmiCalculator.js` defining the BMI calculation in metric and imperial unit.  Here the ranges of BMI classifcations, 'underweight', 'normal', etc., are defined.
+Two classes are defined, the Person class and the BMICalculator class.  The Person class is defined in [`/src/js/person.js`](/src/js/person.js) and contains height and weight attributes.  The BMI calculator functions are contained in [`/src/js/bmiCalculator.js`](/src/js/bmiCalculator.js) defining the BMI calculation in metric and imperial units and the calculation output message.
 
-The application feature test are contained in `/features/index.feature.js` and test the view functionality when connected to the logic as defined in the tests above.  `before`, `beforeEach`, and `after` functions control the browswer behavior in feature tests, while the step definitions specify values that are given as form field inputs and the order in which form buttons are selected.  Separate `describe` blocks are defined in the feature test to verify the metric and imperial calculations.
+The tests for the Person class are contained in [`/spec/person.spec.js`](spec/person.spec.js) that test an instance of the class with specific input parameters, and the output of the BMI calculator with the given set of Person instance parameters.  The BMI Calculator class test is contained in [`/spec/bmiCalculator.spec.js`](/spec/bmiCalculator.spec.js), defining  (test dummy) instance of the Person and an instance of the Calculator to calculate the BMI and verify its output.    
 
-Running the tests using `$ npm test` in accordance with the files defined above will produce successful results for the feature tests,
+The application feature test are contained in [`/features/index.feature.js`](/features/index.feature.js) and test the application functionality when the view is connected to the logic as defined.  `before`, `beforeEach`, and `after` functions in the feature test control the browswer behavior during the test, while the step definitions specify how to interact with the view.  Specifically, which form field inputs are used and the order in which form buttons are selected.  Separate `describe` blocks are defined in the feature test to verify the metric and imperial calculations.
 
+Running the tests using `$ npm test` in accordance with the files defined above will produce the feature tests and unit tests results.
+
+**Feature Test Results**<br>
 ![feature tests](/src/img/bmi_feature_test.png) 
 
-and the unit tests.
-
+**Unit Test Results**<br>
 ![unit tests](/src/img/bmi_spec_test.png) 
 
 
