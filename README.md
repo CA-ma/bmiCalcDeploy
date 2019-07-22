@@ -1,4 +1,4 @@
-# Application: Body Mass Index (BMI) Caclulator
+# Front End Application: Body Mass Index (BMI) Caclulator
 Developed and documented by,
 * Aubain, Max - [Github](https://github.com/CA-ma)
 
