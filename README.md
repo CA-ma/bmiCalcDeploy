@@ -20,12 +20,12 @@ Obesity = 30 or greater
 
 The methods that govern the BMI calculator app are developed with Javascript and styled in the view with HTML and vanilla CSS options.  The methods and features of the calculator are tested using a package called [End To End Training Wheels](https://www.npmjs.com/package/e2e_training_wheels), which is a lightweight JS testing framework that can implement both unit and feature tests.
 
-## Deployment
-The [BMI web app](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Github Pages.
+## Deployment and UI
+The [BMI Calculator application](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Github Pages.  It is designed to have a intuitive interface in which the user can input their height and weight, in either metric or imperial units, and the app returns their BMI.
+
+![home page view](/src/img/home_page_view.png) 
 
 ## Building, Development, and Testing
-The BMI Calculator application is designed to have a intuitive interface in which the user can input their height and weight, in either metric or imperial units, and the app returns their BMI.
-
 To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can also refer to the e2e Training Wheels [installation guidelines](https://www.npmjs.com/package/e2e_training_wheels#installation).
 
 ```
