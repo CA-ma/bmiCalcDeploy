@@ -23,7 +23,7 @@ The methods that govern the BMI calculator app are developed with Javascript and
 ## Deployment and UI
 The [BMI Calculator application](https://ca-ma.github.io/bmiCalcDeploy/) is deployed using Github Pages.  It is designed to have a intuitive interface in which the user can input their height and weight, in either metric or imperial units, and the app returns their BMI.
 
-![home page view](/src/img/home_page_view.png) 
+<img src="src/img/home_page_view.png" width="400">
 
 ## Building, Development, and Testing
 To locally run or test this application, fork this repository to your github account and clone to a local workspace.  The following instructions (for Mac OS terminal) will configure your local workspace with the necessary package manager and packages.  You can also refer to the e2e Training Wheels [installation guidelines](https://www.npmjs.com/package/e2e_training_wheels#installation).
@@ -54,10 +54,10 @@ The application feature test are contained in [`/features/index.feature.js`](/fe
 Running the tests using `$ npm test` in accordance with the files defined above will produce the feature tests and unit tests results.
 
 **Feature Test Results**<br>
-![feature tests](/src/img/bmi_feature_test.png) 
+<img src="./src/img/bmi_feature_test.png" width="420">
 
 **Unit Test Results**<br>
-![unit tests](/src/img/bmi_spec_test.png) 
+<img src="./src/img/bmi_spec_test.png" width="500"> 
 
 ## Acknowledgements
 Thank you to [Craft Academy](https://craftacademy.se/) in Stockholm, Sweden for crafting this challenge.
